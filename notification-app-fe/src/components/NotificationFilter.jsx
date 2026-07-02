@@ -8,10 +8,15 @@ export function NotificationFilter({ value, onChange }) {
       value={value}
       exclusive
       size="small"
+      onChange={(_, newValue) => onChange(newValue || "")}
       sx={{ flexWrap: "wrap", gap: 0.5 }}
     >
       {filters.map((type) => (
-        <ToggleButton value={type} sx={{ textTransform: "none", px: 2 }}>
+        <ToggleButton
+          key={type}
+          value={type === "All" ? "" : type}
+          sx={{ textTransform: "none", px: 2 }}
+        >
           {type}
         </ToggleButton>
       ))}
