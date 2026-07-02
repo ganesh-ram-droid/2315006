@@ -7,7 +7,7 @@ export const Log = async (stack, level, packageName, message) => {
       message,
     };
 
-    console.log("========== Sending Log ==========");
+    console.log("Sending Log ");
     console.log(payload);
 
     const response = await fetch("http://localhost:3001/logs", {
@@ -33,7 +33,7 @@ export const Log = async (stack, level, packageName, message) => {
 
     console.log("Response:", data);
 
-    console.log("=================================");
+    
   } catch (error) {
     console.error("Failed to send log:", error.message);
   }
